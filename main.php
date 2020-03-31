@@ -1,8 +1,11 @@
 <?php
-$rand = rand(1,10)*10;
+require 'index.html';
 $guess = $_GET['userNumber'];
-if($rand == $guess)
-    echo '<p>You\'e got it '. $rand .' is the correct number, well done !</p>';
-else
-    echo '<p>We\'re sorry to tell that your answer is wrong</p>';
+$rand = (rand(1,10)*10);
+$answer = ($rand == $guess);
+if($answer){
+    echo '<p style="text-align: center;font-size: 1.8em;color: green">You Win</p>';
+}else{
+    echo '<p style="text-align: center;font-size: 1.8em;color: red">You Loose</p>';
+}
 ?>
